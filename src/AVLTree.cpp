@@ -144,16 +144,16 @@ bool AVLTree::isBalanced(AVLTree* root)
     return 0;
 }
 
-void AVLTree::Postorder(AVLTree* root, AVLTree *tail)
+void AVLTree::UpdateTree(AVLTree* root, AVLTree *tail)
 {
     if (tail == NULL)
         return;
 
     // first recur on left subtree
-    Postorder(root, tail->left);
+    UpdateTree(root, tail->left);
 
     // then recur on right subtree
-    Postorder(root, tail->right);
+    UpdateTree(root, tail->right);
 
     // now deal with the node
     
@@ -261,6 +261,38 @@ void AVLTree::printCurrentLevel(AVLTree* root, int level)
     {
         printCurrentLevel(root->left, level - 1);
         printCurrentLevel(root->right, level - 1);
+    }
+}
+
+void AVLTree::GarbageCollector(AVLTree *root)
+{
+    if (root == NULL)
+        return;
+
+    // first recur on left subtree
+    GarbageCollector(root->left);
+
+    // then recur on right subtree
+    GarbageCollector(root->right);
+    //Delete Stackes
+    delete (root->node->DepthStack);
+    delete (root->node->HeightStack);
+    //Delete Person
+    delete (root->node->kisi);
+    //Lastly Dlete node
+    delete(root->node);
+
+    //now we can delete the tree step by step
+    if (root->left != NULL)
+    {
+        delete (root->left);
+        root->left = NULL;
+    }
+
+    if (root->right != NULL)
+    {
+        delete (root->right);
+        root->right = NULL;
     }
 }
 

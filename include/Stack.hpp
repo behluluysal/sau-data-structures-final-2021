@@ -3,7 +3,6 @@
 
 #define MAX_SIZE 50
 #include <iostream>
-using namespace std;
 class Stack
 {
 

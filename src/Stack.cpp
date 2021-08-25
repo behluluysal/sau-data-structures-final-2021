@@ -8,7 +8,7 @@ void Stack::push(char x)
 {
     if (top == MAX_SIZE - 1)
     {
-        cout << "Stack Overflow" << endl;
+        std::cout << "Stack Overflow" << std::endl;
         return;
     }
     else
@@ -33,16 +33,16 @@ void Stack::isEmpty()
 {
     if (top == -1)
     {
-        cout << "Is Empty" << endl;
+        std::cout << "Is Empty" << std::endl;
     }
     else
     {
-        cout << "Not Empty" << endl;
+        std::cout << "Not Empty" << std::endl;
     }
 }
 void Stack::topElement()
 {
-    cout << "The top element is : " << A[top];
+    std::cout << "The top element is : " << A[top];
 }
 void Stack::print()
 {

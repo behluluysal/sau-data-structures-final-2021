@@ -5,7 +5,7 @@
 #include "AVLTree.hpp"
 #include "Node.hpp"
 #include "Stack.hpp"
-using namespace std;
+
 class AVLTree
 {
 
@@ -31,8 +31,10 @@ AVLTree();
     int getBalance(AVLTree* N);
 
     AVLTree* insert(AVLTree* node, int key, string ad, int tarih);
-    void Postorder(AVLTree* root, AVLTree* tail);
+    void UpdateTree(AVLTree* root, AVLTree* tail);
     bool isBalanced(AVLTree* root);
+
+    void GarbageCollector(AVLTree *root);
     ~AVLTree();
 };
 

@@ -13,3 +13,7 @@ Node::Node(int boy, string ad, int yas)
     this->DepthStack = new Stack();
     this->HeightStack = new Stack();
 }
+
+Node::~Node(){
+    
+}

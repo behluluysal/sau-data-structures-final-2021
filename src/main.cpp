@@ -7,37 +7,49 @@
 #include <sstream>
 #include <fstream>
 #include <vector>
-using namespace std;
 
 vector<string> split(string target, string delim);
+AVLTree *addNewNode(AVLTree* root, vector<string> vek);
 
 int main()
 {
-    std::cout << "Hello World!\n";
-    AVLTree* root = NULL;
-    root = root->insert(root, 30, "rihanna", 45);
-    root->Postorder(root,root);
-    root = root->insert(root, 32, "Elliana", 38);
-    root->Postorder(root,root);
-    root = root->insert(root, 36, "Savannah", 22);
-    root->Postorder(root,root);
-    root = root->insert(root, 25, "Savannah", 22);
-    root->Postorder(root, root);
-    root = root->insert(root, 22, "Savannah", 22);
-    root->Postorder(root, root);
-    root = root->insert(root, 16, "Savannah", 22);
-    root->Postorder(root, root);
-    root = root->insert(root, 26, "Savannah", 22);
-    root->Postorder(root, root);
-    root = root->insert(root, 27, "Savannah", 22);
-    root->Postorder(root, root);
+    AVLTree *root = NULL;
+    vector<string> v;
+    std::ifstream file("Kisiler.txt");
+
+    if (file.is_open())
+    {
+        std::string line;
+        while (std::getline(file, line))
+        {
+            v = split(line, "#");   
+            root = addNewNode(root,v);
+        }
+        file.close();
+    }
+
     if (root->isBalanced(root))
-        std::cout << "Tree is balanced\n";
+        std::cout << "\n\nTree is balanced\n\n";
     else
-        std::cout << "Tree is not balanced";
+        std::cout << "\n\nTree is not balanced\n\n";
     root->printLevelOrder(root);
+    root->GarbageCollector(root);
 
-
+    std::cout<<"\n\n\nPress any key to close the program...";
+    std::getchar();
+    return 0;
+}
+AVLTree *addNewNode(AVLTree* root, vector<string> vek)
+{
+    stringstream geek(vek[1]);
+    stringstream geek2(vek[2]);
+    int boy = 0;
+    int yas = 0;
+    geek >> yas;
+    geek2 >> boy;
+    root = root->insert(root,boy,vek[0],yas);
+    root->UpdateTree(root,root);
+    return root;
 }
 
 
