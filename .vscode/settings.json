@@ -1,7 +1,8 @@
 {
-    "files.associations": {
-        "iostream": "cpp",
-        "xstring": "cpp",
-        "iosfwd": "cpp"
-    }
+  "files.associations": {
+    "iostream": "cpp",
+    "xstring": "cpp",
+    "iosfwd": "cpp",
+    "vector": "cpp"
+  }
 }

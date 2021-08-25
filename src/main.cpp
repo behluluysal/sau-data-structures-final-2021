@@ -2,14 +2,14 @@
 //
 
 #include "Stack.hpp"
-#include "Node.hpp"
+#include "AVLTree.hpp"
 #include <iostream>
 #include <sstream>
 #include <fstream>
 #include <vector>
 using namespace std;
 
-Node *pushL(int *yeni, int *eski, int id, Node *root, vector<string> vek);
+AVLTree *pushL(int *yeni, int *eski, int id, AVLTree *root, vector<string> vek);
 vector<string> split(string target, string delim);
 
 int main()
@@ -17,7 +17,7 @@ int main()
     int id = 0;
     int *listyeni;
     int *listeski;
-    Node *root = NULL;
+    AVLTree *root = NULL;
     vector<string> v;
 
     ifstream file("Kisiler.txt");
@@ -58,7 +58,7 @@ int main()
     return 0;
 }
 
-Node *pushL(int *listyeni, int *listeski, int id, Node *root, vector<string> vek)
+AVLTree *pushL(int *listyeni, int *listeski, int id, AVLTree *root, vector<string> vek)
 {
     stringstream geek(vek[1]);
     stringstream geek2(vek[2]);
@@ -66,33 +66,7 @@ Node *pushL(int *listyeni, int *listeski, int id, Node *root, vector<string> vek
     int kilo = 0;
     geek >> tarih;
     geek2 >> kilo;
-    for (int i = 0; i < id; i++)
-    {
-        listeski[i] = root->getLevelUtil(root, i, 1);
-    }
 
-    root = root->insert(root, 2020 - tarih, vek[0], kilo, id);
-    for (int i = 0; i < id; i++)
-    {
-        listyeni[i] = root->getLevelUtil(root, i, 1);
-    }
-
-    for (int i = 0; i < id; i++)
-    {
-        if (listeski[i] < listyeni[i])
-        {
-            root->pushLocation(root, 'A', i);
-        }
-        else if (listeski[i] == listyeni[i])
-        {
-            root->pushLocation(root, 'D', i);
-        }
-        else if (listeski[i] > listyeni[i])
-        {
-            root->pushLocation(root, 'Y', i);
-        }
-    }
-    id++;
     return root;
 }
 

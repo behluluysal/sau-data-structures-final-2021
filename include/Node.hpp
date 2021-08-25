@@ -1,35 +1,30 @@
 #ifndef Node_hpp
 #define Node_hpp
-
 #include <iostream>
+#include "Node.hpp"
 #include "Kisi.hpp"
 #include "Stack.hpp"
+
+#include <string>
 using namespace std;
 class Node
 {
 
 public:
     Node();
-    Node(int y, string a, int t, int idd);
+    Node(int, string, int);
 
     Kisi *kisi;
-    Stack *stack;
-    Node *left;
-    Node *right;
+    Stack *HeightStack;
+    Stack *DepthStack;
     int height;
-    int id;
+    int age;
 
     int max(int a, int b);
     int getHeight(Node *N);
-    Node *newNode(int yas, string ad, int kilo, int idd);
-    Node *rightRotate(Node *y);
-    Node *leftRotate(Node *x);
-    int getBalance(Node *N);
-    Node *insert(Node *node, int key, string ad, int tarih, int idd);
-    void Postorder(Node *root);
-    void yukseklikAl(Node *root, int dizi[5]);
-    void pushLocation(Node *root, char move, int id);
-    int getLevelUtil(Node *node, int data, int level);
+    Node *newNode(int yas, string ad, int kilo);
+    void PushHeight(Node *root, int Height);
+    void PushDepth(Node * root, int Depth);
 
     ~Node();
 };

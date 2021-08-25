@@ -7,11 +7,11 @@ using namespace std;
 class Kisi
 {
 public:
-    int kilo;
+    int weight;
     string ad;
-    int yas;
+    int height;
     Kisi();
-    Kisi(int y, string a, int t);
+    Kisi(int, string, int);
     ~Kisi();
 };
 
