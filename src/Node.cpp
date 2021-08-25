@@ -1,18 +1,15 @@
-#include <iostream>
 #include "Node.hpp"
-#include "Kisi.hpp"
-#include "Stack.hpp"
-#include <string>
-using namespace std;
 
 Node::Node()
 {
+    this->kisi = NULL;
+    this->DepthStack = NULL;
+    this->HeightStack = NULL;
 }
 
-Node::Node(int boy, string ad, int kilo)
+Node::Node(int boy, string ad, int yas)
 {
-    Node *node = new Node();
-    node->kisi = new Kisi(boy, ad, kilo);
-    node->DepthStack = new Stack();
-    node->HeightStack = new Stack();
+    this->kisi = new Kisi(boy, ad, yas);
+    this->DepthStack = new Stack();
+    this->HeightStack = new Stack();
 }

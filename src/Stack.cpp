@@ -1,5 +1,4 @@
 #include "Stack.hpp"
-
 Stack::Stack()
 {
     top = -1;
@@ -47,10 +46,14 @@ void Stack::topElement()
 }
 void Stack::print()
 {
-    for (int i = 0; i <= top; i++)
+    std::cout << "(";
+    while (top != -1)
     {
-        cout << "top:  " << A[i] << endl;
+        std::cout << pop();
+        if (top != -1)
+            std::cout << ",";        
     }
+    std::cout << ") ";
 }
 
 Stack::~Stack()

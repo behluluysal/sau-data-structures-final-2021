@@ -10,23 +10,29 @@ class AVLTree
 {
 
 public:
-    AVLTree();
-    AVLTree(int, string, int);
+AVLTree();
 
-    Node *node;
-    AVLTree *left;
-    AVLTree *right;
+    Node* node;
+    AVLTree* left;
+    AVLTree* right;
     int height;
 
     int max(int a, int b);
-    int getHeight(AVLTree *N);
-    AVLTree *newNode(int yas, string ad, int kilo);
-    AVLTree *rightRotate(AVLTree *y);
-    AVLTree *leftRotate(AVLTree *x);
-    int getBalance(AVLTree *N);
-    AVLTree *insert(AVLTree *node, int key, string ad, int tarih);
-    void Postorder(AVLTree *root);
+    int getHeight(AVLTree* N);
+    AVLTree* newNode(int yas, string ad, int boy);
+    int findDepth(AVLTree* root, int x);
 
+    int FindMaxHeight(AVLTree* node);
+    void printLevelOrder(AVLTree* root);
+    void printCurrentLevel(AVLTree* root, int level);
+
+    AVLTree* rightRotate(AVLTree* y);
+    AVLTree* leftRotate(AVLTree* x);
+    int getBalance(AVLTree* N);
+
+    AVLTree* insert(AVLTree* node, int key, string ad, int tarih);
+    void Postorder(AVLTree* root, AVLTree* tail);
+    bool isBalanced(AVLTree* root);
     ~AVLTree();
 };
 

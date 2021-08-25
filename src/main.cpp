@@ -9,66 +9,37 @@
 #include <vector>
 using namespace std;
 
-AVLTree *pushL(int *yeni, int *eski, int id, AVLTree *root, vector<string> vek);
 vector<string> split(string target, string delim);
 
 int main()
 {
-    int id = 0;
-    int *listyeni;
-    int *listeski;
-    AVLTree *root = NULL;
-    vector<string> v;
+    std::cout << "Hello World!\n";
+    AVLTree* root = NULL;
+    root = root->insert(root, 30, "rihanna", 45);
+    root->Postorder(root,root);
+    root = root->insert(root, 32, "Elliana", 38);
+    root->Postorder(root,root);
+    root = root->insert(root, 36, "Savannah", 22);
+    root->Postorder(root,root);
+    root = root->insert(root, 25, "Savannah", 22);
+    root->Postorder(root, root);
+    root = root->insert(root, 22, "Savannah", 22);
+    root->Postorder(root, root);
+    root = root->insert(root, 16, "Savannah", 22);
+    root->Postorder(root, root);
+    root = root->insert(root, 26, "Savannah", 22);
+    root->Postorder(root, root);
+    root = root->insert(root, 27, "Savannah", 22);
+    root->Postorder(root, root);
+    if (root->isBalanced(root))
+        std::cout << "Tree is balanced\n";
+    else
+        std::cout << "Tree is not balanced";
+    root->printLevelOrder(root);
 
-    ifstream file("Kisiler.txt");
-    int number_of_lines = 0;
 
-    if (file.is_open())
-    {
-        string line;
-        while (std::getline(file, line))
-        {
-            number_of_lines++;
-        }
-        file.close();
-    }
-
-    listeski = new int[number_of_lines];
-    listyeni = new int[number_of_lines];
-
-    file.clear();
-    file.open("Kisiler.txt");
-    if (file.is_open())
-    {
-        string line;
-        while (std::getline(file, line))
-        {
-            v = split(line, "#");
-            root = pushL(listyeni, listeski, id, root, v);
-            id++;
-        }
-        file.close();
-    }
-
-    cout << "AVL Agacinin postorder goruntusu:  \n\n";
-    root->Postorder(root);
-    delete (listeski);
-    delete (listyeni);
-    delete (root);
-    return 0;
 }
 
-AVLTree *pushL(int *listyeni, int *listeski, int id, AVLTree *root, vector<string> vek)
-{
-    stringstream geek(vek[1]);
-    stringstream geek2(vek[2]);
-    int tarih = 0;
-    int kilo = 0;
-    geek >> tarih;
-    geek2 >> kilo;
-
-    return root;
-}
 
 vector<string> split(string target, string delim)
 {

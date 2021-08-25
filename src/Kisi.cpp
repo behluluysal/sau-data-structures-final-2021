@@ -4,12 +4,13 @@ Kisi::Kisi()
 {
 }
 
-Kisi::Kisi(int boy, string ad, int kilo)
+Kisi::Kisi(int boy, string ad, int yas)
 {
-    this->weight = kilo;
+    this->age = yas;
     this->ad = ad;
     this->height = boy;
 }
+
 
 Kisi::~Kisi()
 {

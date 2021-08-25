@@ -7,9 +7,9 @@ using namespace std;
 class Kisi
 {
 public:
-    int weight;
-    string ad;
     int height;
+    string ad;
+    int age;
     Kisi();
     Kisi(int, string, int);
     ~Kisi();

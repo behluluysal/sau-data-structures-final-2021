@@ -1,30 +1,24 @@
 #ifndef Node_hpp
 #define Node_hpp
-#include <iostream>
+
 #include "Node.hpp"
 #include "Kisi.hpp"
 #include "Stack.hpp"
 
+#include <iostream>
 #include <string>
 using namespace std;
 class Node
 {
 
 public:
+public:
     Node();
-    Node(int, string, int);
+    Node(int yas, string ad, int kilo);
 
-    Kisi *kisi;
-    Stack *HeightStack;
-    Stack *DepthStack;
-    int height;
-    int age;
-
-    int max(int a, int b);
-    int getHeight(Node *N);
-    Node *newNode(int yas, string ad, int kilo);
-    void PushHeight(Node *root, int Height);
-    void PushDepth(Node * root, int Depth);
+    Kisi* kisi;
+    Stack* HeightStack;
+    Stack* DepthStack;
 
     ~Node();
 };
