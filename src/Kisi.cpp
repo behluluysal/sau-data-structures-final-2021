@@ -4,7 +4,7 @@ Kisi::Kisi()
 {
 }
 
-Kisi::Kisi(int boy, string ad, int yas)
+Kisi::Kisi(int boy, std::string ad, int yas)
 {
     this->age = yas;
     this->ad = ad;

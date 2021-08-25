@@ -3,18 +3,17 @@
 
 #include "Stack.hpp"
 #include "AVLTree.hpp"
-#include <iostream>
-#include <sstream>
 #include <fstream>
+#include <sstream>
 #include <vector>
 
-vector<string> split(string target, string delim);
-AVLTree *addNewNode(AVLTree* root, vector<string> vek);
+std::vector<std::string> split(std::string target, std::string delim);
+AVLTree *addNewNode(AVLTree* root, std::vector<std::string> vek);
 
 int main()
 {
     AVLTree *root = NULL;
-    vector<string> v;
+    std::vector<std::string> v;
     std::ifstream file("Kisiler.txt");
 
     if (file.is_open())
@@ -39,10 +38,10 @@ int main()
     std::getchar();
     return 0;
 }
-AVLTree *addNewNode(AVLTree* root, vector<string> vek)
+AVLTree *addNewNode(AVLTree* root, std::vector<std::string> vek)
 {
-    stringstream geek(vek[1]);
-    stringstream geek2(vek[2]);
+    std::stringstream geek(vek[1]);
+    std::stringstream geek2(vek[2]);
     int boy = 0;
     int yas = 0;
     geek >> yas;
@@ -53,16 +52,16 @@ AVLTree *addNewNode(AVLTree* root, vector<string> vek)
 }
 
 
-vector<string> split(string target, string delim)
+std::vector<std::string> split(std::string target, std::string delim)
 {
-    vector<string> v;
+    std::vector<std::string> v;
     if (!target.empty())
     {
-        string::size_type start = 0;
+        std::string::size_type start = 0;
         do
         {
             size_t x = target.find(delim, start);
-            if (x == string::npos)
+            if (x == std::string::npos)
                 break;
 
             v.push_back(target.substr(start, x - start));

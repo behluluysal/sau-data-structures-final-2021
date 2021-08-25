@@ -4,16 +4,12 @@
 #include "Node.hpp"
 #include "Kisi.hpp"
 #include "Stack.hpp"
-
-#include <iostream>
-#include <string>
 class Node
 {
 
 public:
-public:
     Node();
-    Node(int yas, string ad, int kilo);
+    Node(int yas, std::string ad, int kilo);
 
     Kisi* kisi;
     Stack* HeightStack;

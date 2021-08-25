@@ -7,7 +7,7 @@ Node::Node()
     this->HeightStack = NULL;
 }
 
-Node::Node(int boy, string ad, int yas)
+Node::Node(int boy, std::string ad, int yas)
 {
     this->kisi = new Kisi(boy, ad, yas);
     this->DepthStack = new Stack();

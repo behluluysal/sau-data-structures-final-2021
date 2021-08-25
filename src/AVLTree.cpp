@@ -1,7 +1,7 @@
+
+
 #include "AVLTree.hpp"
 #include "Node.hpp"
-#include <iostream>
-#include <string>
 
 
 AVLTree::AVLTree()
@@ -13,7 +13,7 @@ AVLTree::AVLTree()
 }
 
 
-AVLTree* AVLTree::newNode(int yas, string ad, int boy)
+AVLTree* AVLTree::newNode(int yas, std::string ad, int boy)
 {
     AVLTree* agac = new AVLTree();
     agac->node = new Node(yas, ad, boy);
@@ -72,7 +72,7 @@ int AVLTree::getBalance(AVLTree* N)
     return getHeight(N->left) - getHeight(N->right);
 }
 
-AVLTree* AVLTree::insert(AVLTree* agac, int key, string ad, int yas)
+AVLTree* AVLTree::insert(AVLTree* agac, int key, std::string ad, int yas)
 {
     //key = boy
     /* 1. Perform the normal BST insertion */
@@ -98,7 +98,7 @@ AVLTree* AVLTree::insert(AVLTree* agac, int key, string ad, int yas)
     // there are 4 cases
 
     // Left Left Case
-    if (balance > 1 && key < agac->left->node->kisi->height)
+    if (balance > 1 && key <= agac->left->node->kisi->height)
         return rightRotate(agac);
 
     // Right Right Case

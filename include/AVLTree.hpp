@@ -4,7 +4,6 @@
 #include <iostream>
 #include "AVLTree.hpp"
 #include "Node.hpp"
-#include "Stack.hpp"
 
 class AVLTree
 {
@@ -19,7 +18,7 @@ AVLTree();
 
     int max(int a, int b);
     int getHeight(AVLTree* N);
-    AVLTree* newNode(int yas, string ad, int boy);
+    AVLTree* newNode(int yas, std::string ad, int boy);
     int findDepth(AVLTree* root, int x);
 
     int FindMaxHeight(AVLTree* node);
@@ -30,7 +29,7 @@ AVLTree();
     AVLTree* leftRotate(AVLTree* x);
     int getBalance(AVLTree* N);
 
-    AVLTree* insert(AVLTree* node, int key, string ad, int tarih);
+    AVLTree* insert(AVLTree* node, int key, std::string ad, int tarih);
     void UpdateTree(AVLTree* root, AVLTree* tail);
     bool isBalanced(AVLTree* root);
 
